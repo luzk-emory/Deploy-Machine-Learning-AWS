@@ -54,11 +54,11 @@ Occasionally, the project uses human images for comparison and/or other goals.
 
 Here are some examples of dog pictures:
 
-<img src="images/Brittany_02625.jpg" alt="Brittany_02625" style="zoom:33%;" /> <img src="images/American_water_spaniel_00648.jpg" alt="American_water_spaniel_00648" style="zoom:50%;" /> <img src="/Users/luzk/Documents/Udacity/Machine-Learning-Engineer/p3-capstone/images/Labrador_retriever_06455.jpg" alt="Labrador_retriever_06455" style="zoom: 33%;" />
+<img src="images/Brittany_02625.jpg" alt="Brittany_02625" style="zoom:33%;" /> <img src="images/American_water_spaniel_00648.jpg" alt="American_water_spaniel_00648" style="zoom:50%;" /> <img src="images/Labrador_retriever_06455.jpg" alt="Labrador_retriever_06455" style="zoom: 33%;" />
 
 As we can see, the images are different in shapes. Some are wider than others. The following graph further shows the image size varies greatly,
 
-<img src="/Users/luzk/Documents/Udacity/Machine-Learning-Engineer/p3-capstone/images/scatter.png" alt="scatter" style="zoom:50%;" />
+<img src="images/scatter.png" alt="scatter" style="zoom:50%;" />
 
 where I plot the image width against image height in a scatter plot using the first 1000 images from the training set. 
 
@@ -223,10 +223,10 @@ Next, I use the test dataset to evaluate the trained model. The test loss is 0.4
 Our transfer learning model works very well. Based on the trained model, we developed a toy app that takes in images. It first utilize the OpenCV's detector (a third party module) to decide what kind of image it receives.
 
 - If the image contains a dog, the app will print the predicted dog breed. See the following examples. For most of the time, the app can correctly classify the dog's breed.
-  <img src="images/out1.png" alt="out1" style="zoom:40%;" /> <img src="images/out2.png" alt="out2" style="zoom:40%;" />
+  <img src="images/out1.png" alt="out1" style="zoom:30%;" /> <img src="images/out2.png" alt="out2" style="zoom:30%;" />
 
 - If the image contains a human face, the app will still feed the image into the model and find out the most resembling dog breed. Below are some examples. 
-  <img src="images/out3.png" alt="out3" style="zoom:35%;" /> <img src="images/out4.png" alt="out4" style="zoom:35%;" />
+  <img src="images/out3.png" alt="out3" style="zoom:30%;" /> <img src="images/out4.png" alt="out4" style="zoom:30%;" />
 
 - The image contains neither a human face nor a dog, the program will provide output that indicates an error.
 
