@@ -78,9 +78,9 @@ In this project, I will employ two types of CNN-based models to tackle our probl
 1. A CNN build from scratch. 
    As a starting point, I will design and train a small scale CNN model using my laptop. A toy model should work to some extent but may not be powerful enough to achieve high performance. 
 2. A transfer learning model utilizing model parameters from a pre-trained CNN. 
-   Transfer learning allows our model to use "knowledge" from other trained CNN models to serve our goal. Those trained CNN models are usually large in scale and powerful in performance, but not tailored for our task at hand. By utilizing their "knowledge" and train a transfer learning model, one can potentially achieve high model performance very fast.
+   Transfer learning allows our model to use "knowledge" from other trained CNN models to serve our goal. Those trained CNN models are usually large in scale and powerful in performance, but not tailored for our task at hand. By utilizing their "knowledge" and train a transfer learning model, one can potentially achieve high model performance very fast. I pick VGG16 (Simonyan et al. 2014) for transfer learning. VGG16 has achieved very good performance in many standardized tests. Moreover, it has been tested in practice to be a good model for transfer learning. 
 
-The models are trained with the standard backpropagation methods. Further, I use GPU to accelerate the training process.
+The models are trained with the standard backpropagation method. Further, I use GPU to accelerate the training process.
 
 ### Benchmark
 
@@ -266,3 +266,4 @@ A more promising direction, in my view, is to experiment on different transfer l
 5. The human image dataset http://vis-www.cs.umass.edu/lfw/lfw.tgz
 6. PyTorch Document for cross entropy loss https://pytorch.org/docs/master/generated/torch.nn.CrossEntropyLoss.html
 7. PyTorch Document for VGG16 https://pytorch.org/vision/stable/models.html 
+8. Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." *arXiv preprint arXiv:1409.1556* (2014).
