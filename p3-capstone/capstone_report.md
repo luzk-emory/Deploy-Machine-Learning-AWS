@@ -16,7 +16,6 @@ The central goal of this project is to design and implement a machine-learning-p
 
 <img src="images/Labrador_retriever_06457.jpg" alt="dog" style="zoom:50%;" />
 
-
 To achieve this goal, I will 
 
 1. build and train a CNN from scratch, and
@@ -208,13 +207,19 @@ The transfer learning model works amazingly well without much refinement in mode
 
 After 30 epochs of training, the training loss decreases from the initial level 4.85 to 2.93. However, the validation loss remains around 3.5 after 20 epochs of training, which implies the model has been properly trained. Further training is likely to incur overfitting. 
 
-The resting loss is 3.23, and the model correctly classified 190 dogs' breeds out of a total of 836 dog images, an accuracy rate of 22%, which is much higher than the benchmark. This is a pretty good result, given the relatively small network size and limited computing capacity devoted. Nonetheless, I think an application with this accuracy rate is not very helpful in real world.
+Next, I use the test dataset to evaluate the trained model. The testing loss is 3.23, and the model correctly classified 190 dogs' breeds out of a total of 836 dog images, an accuracy rate of 22%. 
 
 #### Transfer learning
 
 I also trained the model for 30 epochs. The initial training loss is 4.23, which is similar to the CNN from scratch. However, when the 2nd epoch is finished, the training loss went down to 2.78, which is already smaller than the best performance achieved by the CNN from scratch. After 30 epochs, the training and validation loss became as low as 0.36. 
 
-Next, I use the test dataset to evaluate the trained model. The test loss is 0.42, and the accuracy is 87%, a surprisingly high level. Thus, transfer learning is extremely powerful, even though I only spent a few hours to train the model. I believe this accuracy rate is better than most human nonexperts. Thus, the model can be useful in real world.
+Next, I use the test dataset to evaluate the trained model. The test loss is 0.42, and the accuracy is 87%, a surprisingly high level. The model correctly classified 728 dogs' breeds out of a total of 836 dog images. 
+
+### Justification
+
+For the CNN from scratch, an accuracy rate of 22% is achieved on the test set. Compared to the 10% benchmark, this result is pretty good. Given the relatively small network size and limited computing capacity devoted into, this exercise shows that CNNs have great potential in image recognition tasks. However, an application built upon the current model is unlikely to be useful, as the probability of misclassification is still very high.
+
+For the transfer learning model, an accuracy rate of 87% is achieved on the test set, which is 7 percentage points higher than the 80% benchmark. This exercise shows that transfer learning can be extremely powerful, even though I only spent a few hours to train the model. I believe the model's classification is better than most human nonexperts, and thus, the model can be helpful in real world.
 
 ## V. Conclusion
 
