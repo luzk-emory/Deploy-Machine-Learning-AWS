@@ -67,9 +67,13 @@ Next, I show some human images. They are not used for model training but will be
 
 ### Algorithms and Techniques
 
-I mainly use CNNs to solve our central image classification problem. CNNs are a class of artificial neural network that have been widely used for image processing and analysis. Their unique network architecture is able to capture two-dimensional features in pictures and then use these features to draw conclusions. CNNs are believed to be one of the most powerful machine/deep learning technologies for image processing.
+Images are hard to process because of their high dimensionality. When casting a 224$\times$224 RGB image into a vector, the vector has a length of 150528 (=224$\times$224$\times$3). Such complexity poses a great challenge to traditional machine learning methods. Fortunately, deep learning models equipped with high performance computing technologies are much more adept at processing complex data. Nonetheless, standard atificial neural networks (ANN) are not ideal for dealing with image data for a few reasons. One is that ANNs take in one dimensional data and thus do not fully addresss the two dimentional nature of image data. Another issue is that ANNs with multiple fully connected layers face the issue of exploding parameters. Thus, we need model architectures that are better tailored to image data.
 
-I employ two types of CNN-based models to tackle our problem:
+The most popular choices in both industry and academia are CNNs. CNNs' unique network architecture enables them to capture some key two-dimensional features in images and meanwhile maintains the model complexity at a manageble level. This capability is achieved through convolutional layers. Convolutional layers, unlike fully connected layers, ignore the potential connection between two pixels that are far away from each other, by concentrating on the local area and utilizing the socalled convolutional kernal. This design greatly reduces the model complexity but still allows the model to capture an image's local features in two dimensional space, such as the edges of an object, which are crucial to differentiate one object from another.
+
+Normally, the convolutional layers are believed to serve as feature extractors. Following the convolutional layers, fully connceted layers will be employed to serve as classifiers. Thus, the model will learn from data how to extract local features and how to best use these features for classification. This conceptual separation gives rise to transfer learning. Good feature extractors should work well for a variety of classification problems. Thus, one may utilize the feature extractors from a sophisticatedly trained model, take them as given, and then retrain the classifier to solve a different problem. This practice can save a lot of training cost yet achieve high model performance.
+
+In this project, I will employ two types of CNN-based models to tackle our problem:
 
 1. A CNN build from scratch. 
    As a starting point, I will design and train a small scale CNN model using my laptop. A toy model should work to some extent but may not be powerful enough to achieve high performance. 
