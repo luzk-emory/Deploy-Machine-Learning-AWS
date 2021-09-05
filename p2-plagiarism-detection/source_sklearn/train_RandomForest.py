@@ -4,13 +4,14 @@ import argparse
 import os
 import pandas as pd
 
+from sklearn.externals import joblib # uncomment if using 0.20.0
+
 # sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. 
-# from sklearn.externals import joblib
 # Import joblib package directly
-import joblib
+# import joblib
 
 ## TODO: Import any additional libraries you need to define a model
-
+from sklearn.ensemble import RandomForestClassifier
 
 # Provided model load function
 def model_fn(model_dir):
@@ -42,6 +43,7 @@ if __name__ == '__main__':
     parser.add_argument('--data-dir', type=str, default=os.environ['SM_CHANNEL_TRAIN'])
     
     ## TODO: Add any additional arguments that you will need to pass into your model
+    parser.add_argument('--n_estimators', type=int, default=100)
     
     # args holds all passed-in arguments
     args = parser.parse_args()
@@ -54,17 +56,14 @@ if __name__ == '__main__':
     train_y = train_data.iloc[:,0]
     train_x = train_data.iloc[:,1:]
     
-    
     ## --- Your code here --- ##
     
-
     ## TODO: Define a model 
-    model = None
-    
+    model = RandomForestClassifier(n_estimators=args.n_estimators, 
+                                   random_state=0)
     
     ## TODO: Train the model
-    
-    
+    model.fit(train_x, train_y) 
     
     ## --- End of your code  --- ##
     
